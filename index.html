@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>To do list</title>
+  <link rel="stylesheet" href="css/style.css">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
   <script src="js/angular-local-storage.min.js"></script>
   <script src="js/controller.js"></script>
 </head>
 <body ng-controller="ToDoController">
+  <h1>Cosas Por Hacer</h1>
   <ul>
     <li ng-repeat="actividad in todo">
       {{actividad.descripcion}} -
@@ -15,10 +17,12 @@
     </li>
   </ul>
   <form ng-submit="addActv()">
+    <p>Tarea</p>
     <input type="text" ng-model="newActv.descripcion">
+    <p>Fecha</p>
     <input type="datetime-local" ng-model="newActv.fecha">
     <input type="submit" value="Guardar actividad">
   </form>
   <button ng-click="clean()">Limpiar</button>
 </bod
-</html>-
+</html>
